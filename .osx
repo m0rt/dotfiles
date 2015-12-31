@@ -12,16 +12,19 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "m1"
-sudo scutil --set HostName "m1"
-sudo scutil --set LocalHostName "m1"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "m1"
+sudo scutil --set ComputerName "m0"
+sudo scutil --set HostName "m0"
+sudo scutil --set LocalHostName "m0"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "m0"
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
+
+# no ui sound effects
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true

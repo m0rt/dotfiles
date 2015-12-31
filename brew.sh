@@ -2,6 +2,8 @@
 
 # Install command-line tools using Homebrew.
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -44,8 +46,6 @@ brew install homebrew/dupes/screen
 brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
-#brew install --appdir="/Applications" boot2docker
-#brew install docker
 brew install sqlite
 brew install mysql
 brew install npm
@@ -58,6 +58,7 @@ brew cask install --appdir="/Applications" java
 brew cask install google-chrome
 rm /Applications/Google\ Chrome.app
 sudo cp -R /opt/homebrew-cask/Caskroom/google-chrome/latest/Google\ Chrome.app /Applications
+brew cask install --appdir="/Applications" appcleaner
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" macvim
 brew cask install --appdir="/Applications" menumeters
@@ -74,6 +75,7 @@ brew cask install --appdir="/Applications" atom
 brew cask install --appdir="/Applications" expressvpn
 brew cask install --appdir="/Applications" google-drive
 brew cask install --appdir="/Applications" box-sync
+brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" sizeup
 brew cask install --appdir="/Applications" vmware-fusion
 brew cask install --appdir="/Applications" unrarx
@@ -85,69 +87,13 @@ brew cask install --appdir="/Applications" robomongo
 brew cask install --appdir="/Applications" charles
 brew cask install --appdir="/Applications" microsoft-office
 brew cask install --appdir="/Applications" omnifocus
-brew cask install --appdir="/Applications" remote-desktop-connection
+brew cask install --appdir="/Applications" dockertoolbox
 brew cask install --appdir="/Applications" vmware-fusion
 brew cask install --appdir="/Applications" steam
+brew cask install --appdir="/Applications" kaleidoscope
+brew cask install --appdir="/Applications" jadengeller-helium
+brew cask install --appdir="/Applications" noizio
 
-
-dockutil --remove "Launchpad" --no-restart
-dockutil --remove "Notes" --no-restart
-dockutil --remove "Maps" --no-restart
-dockutil --remove "FaceTime" --no-restart
-dockutil --remove "iPhoto" --no-restart
-dockutil --remove "Pages" --no-restart
-dockutil --remove "Numbers" --no-restart
-dockutil --remove "Keynote" --no-restart
-
-dockutil --add /Applications/Utilities/Terminal.app --no-restart
-dockutil --add /Applications/MacVim.app --no-restart
-dockutil --add /Applications/Atom.app --no-restart
-dockutil --add /Applications/Google\ Chrome.app --no-restart
-dockutil --add /Applications/Firefox.app --no-restart
-dockutil --add /Applications/Slack.app --no-restart
-dockutil --add /Applications/Skype.app --no-restart
-dockutil --add /Applications/SourceTree.app --no-restart
-dockutil --add /Applications/OmniFocus.app --no-restart
-dockutil --add /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app --no-restart
-dockutil --add /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app --no-restart
-dockutil --add /Applications/Calculator.app --no-restart
-dockutil --add /Applications/Charles.app --no-restart
-dockutil --add /Applications/Cyberduck.app --no-restart
-dockutil --add /Applications/Eclipse.app --no-restart
-dockutil --add /Applications/ExpressVPN.app --no-restart
-dockutil --add /Applications/IntelliJ\ IDEA\ 14.app --no-restart
-dockutil --add /Applications/iTerm.app --no-restart
-dockutil --add /Applications/Spotify.app --no-restart
-dockutil --add /Applications/VLC.app --no-restart
-dockutil --add /Applications/VMWare\ Fusion.app --no-restart
-dockutil --add /Applications/Sequel\ Pro.app --no-restart
-
-
-# dockutil --move "Mail" --position 1 --no-restart
-# dockutil --move "Calendar" --position 2 --no-restart
-# dockutil --move "Messages" --position 3 --no-restart
-# dockutil --move "HipChat" --position 4 --no-restart
-# dockutil --move "Skype" --position 5 --no-restart
-# dockutil --move "Google Chrome" --position 6 --no-restart
-# dockutil --move "Firefox" --position 7 --no-restart
-# dockutil --move "Safari" --position 8 --no-restart
-# dockutil --move "PhpStorm" --position 9 --no-restart
-# dockutil --move "Atom" --position 10 --no-restart
-# dockutil --move "VirtualHostX" --position 11 --no-restart
-# dockutil --move "Sequel Pro" --position 12 --no-restart
-# dockutil --move "Terminal" --position 13 --no-restart
-
-# /usr/bin/killall -HUP Dock >/dev/null 2>&1
-
-# open -a "Google Chrome" https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb
-# open -a "Google Chrome" https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en
-# open -a "Google Chrome" https://chrome.google.com/webstore/detail/reddit-enhancement-suite/kbmfpngjjgdllneeigpgjifpgocmfgmb
-# open -a "Google Chrome" https://chrome.google.com/webstore/detail/bugherd-plus/popigpemobhbfkhnnkllkjgkaabedgpb
-# open -a "Google Chrome" https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp/related?hl=en
-#
-# open -a "Google Chrome" https://agilebits.com/onepassword/extensions/chrome?beta=false
-# open -a "Firefox" https://agilebits.com/onepassword/extensions/firefox?beta=false
-# open -a "Safari" https://agilebits.com/onepassword/extensions/safari?beta=false
 
 # Remove outdated versions from the cellar.
 brew cleanup --force

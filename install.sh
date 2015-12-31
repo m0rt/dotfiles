@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-./brew.sh
+#./brew.sh
 
-echo "installed everything"
+#echo "installed everything"
 
 
-mkdir -p ~/ws
+#mkdir -p ~/ws
 
 
 ./.osx
